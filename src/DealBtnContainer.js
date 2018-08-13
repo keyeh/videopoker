@@ -5,7 +5,7 @@ import { newHand, holdCard, dealNextCards } from "./actions/index";
 
 class DealBtnContainer extends Component {
     handleButton() {
-        if (this.props.endOfRound) {
+        if (this.props.roundEnded) {
             this.props.newHand();
         } else {
             this.props.dealNextCards();
@@ -20,7 +20,7 @@ class DealBtnContainer extends Component {
 const mapDispatchToProps = { newHand, dealNextCards };
 
 const mapStateToProps = (state) => ({
-    endOfRound: state.data.endOfRound
+    roundEnded: state.data.roundEnded
 });
 export default connect(
     mapStateToProps,

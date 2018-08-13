@@ -20,6 +20,10 @@ class App extends Component {
             <div className="App">
                 <CardContainer />
                 <DealBtnContainer />
+                <br />
+                {this.props.data.roundData.name}
+                <br />
+                You win: {this.props.data.roundData.win}
             </div>
         );
     }

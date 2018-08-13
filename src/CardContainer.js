@@ -5,7 +5,7 @@ import { newHand, holdCard, dealNextCards } from "./actions/index";
 
 class CardContainer extends Component {
     handleCardClick(id) {
-        if (!this.props.endOfRound) this.props.holdCard(id);
+        if (!this.props.roundEnded) this.props.holdCard(id);
     }
 
     render() {
@@ -24,7 +24,7 @@ const mapDispatchToProps = { holdCard };
 
 const mapStateToProps = (state) => ({
     hand: state.data.hand,
-    endOfRound: state.data.endOfRound
+    roundEnded: state.data.roundEnded
 });
 export default connect(
     mapStateToProps,

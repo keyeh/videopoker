@@ -1,9 +1,10 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
-import { destructureCard } from "../helpers";
+import { destructureCard, evaluateHand } from "../helpers";
 let defaultState = {
     hand: null,
     deckData: null,
-    endOfRound: false
+    roundEnded: false,
+    roundData: {}
 };
 
 export default (state = defaultState, action) => {
@@ -22,7 +23,7 @@ export default (state = defaultState, action) => {
                 hand: { ...state.hand, [action.payload]: target }
             };
         case DEAL_NEXT_CARDS: {
-            let newHand = {};
+            let newHand = { ...state.hand };
             for (let key in state.hand) {
                 if (!state.hand[key].hold) {
                     newHand[key] = destructureCard(state.deckData.draw());
@@ -30,8 +31,9 @@ export default (state = defaultState, action) => {
             }
             return {
                 ...state,
-                hand: { ...state.hand, ...newHand },
-                endOfRound: true
+                hand: { ...newHand },
+                roundEnded: true,
+                roundData: evaluateHand(newHand)
             };
         }
         default:
