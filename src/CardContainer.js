@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
 import { newHand, holdCard, dealNextCards } from "./actions/index";
+import "./CardContainer.css";
 
 class CardContainer extends Component {
     handleCardClick(id) {
@@ -11,7 +12,7 @@ class CardContainer extends Component {
     render() {
         let cards = this.props.hand;
         return (
-            <div>
+            <div className="cardContainer">
                 {Object.keys(cards).map((key) => {
                     return <Card key={key} id={key} card={cards[key]} onClick={this.handleCardClick.bind(this)} />;
                 })}

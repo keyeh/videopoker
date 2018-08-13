@@ -1,0 +1,10 @@
+.cardContainer {
+    display: grid;
+    height: 300px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.card {
+    background-color: tan;
+}
