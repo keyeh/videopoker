@@ -4,6 +4,7 @@ import "./App.css";
 import { connect } from "react-redux";
 import { newHand, holdCard, dealNextCards } from "./actions/index";
 import CardContainer from "./CardContainer";
+import DealBtnContainer from "./DealBtnContainer";
 
 class App extends Component {
     constructor(props) {
@@ -18,8 +19,7 @@ class App extends Component {
         return (
             <div className="App">
                 <CardContainer />
-                <button onClick={() => this.props.newHand()}>New Hand</button>
-                <button onClick={() => this.props.dealNextCards()}>Deal</button>
+                <DealBtnContainer />
             </div>
         );
     }

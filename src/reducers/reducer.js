@@ -2,7 +2,8 @@ import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
 import { destructureCard } from "../helpers";
 let defaultState = {
     hand: null,
-    deckData: null
+    deckData: null,
+    endOfRound: false
 };
 
 export default (state = defaultState, action) => {
@@ -29,7 +30,8 @@ export default (state = defaultState, action) => {
             }
             return {
                 ...state,
-                hand: { ...state.hand, ...newHand }
+                hand: { ...state.hand, ...newHand },
+                endOfRound: true
             };
         }
         default:
