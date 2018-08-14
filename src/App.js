@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { newHand, holdCard, dealNextCards } from "./actions/index";
+import { newHand, holdCard, dealNextCards, revealCards } from "./actions/index";
 import CardContainer from "./CardContainer";
 import DealBtnContainer from "./DealBtnContainer";
 import WinContainer from "./WinContainer";
 import HandStatusContainer from "./HandStatusContainer";
 import PayTableContainer from "./PayTableContainer";
 import CreditContainer from "./CreditContainer";
+import ImagePreload from "./ImagePreload";
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.props.newHand();
-        // this.props.holdCard(1);
-        // this.props.dealNextCards();
+        this.props.revealCards();
     }
     componentWillMount() {}
     render() {
         return (
             <div className="App">
+                <ImagePreload />
                 <PayTableContainer />
                 <HandStatusContainer />
                 <CardContainer />
@@ -42,7 +43,7 @@ class App extends Component {
     }
 }
 
-const mapDispatchToProps = { newHand, holdCard, dealNextCards };
+const mapDispatchToProps = { newHand, holdCard, dealNextCards, revealCards };
 
 const mapStateToProps = (state) => ({
     ...state

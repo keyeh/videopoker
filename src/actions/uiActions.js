@@ -1,15 +1,8 @@
 import { UI_CARD_IMAGE_LOADED, UI_CARD_REVEAL, UI_CARD_RESET } from "./index";
 
-export const cardImageLoaded = (i) => {
-    return function(dispatch, getState) {
-        dispatch({
-            type: UI_CARD_IMAGE_LOADED,
-            payload: i
-        });
-        // if all are done loading, reveal cards
-        if (Object.values(getState().ui.cardImageLoaded).every((val) => val)) {
-            dispatch(revealCards());
-        }
+export const cardImageLoaded = () => {
+    return {
+        type: UI_CARD_IMAGE_LOADED
     };
 };
 export const hideDiscardedCards = () => {
@@ -24,7 +17,7 @@ export const hideDiscardedCards = () => {
     };
 };
 export const revealCards = () => {
-    return function(dispatch) {
+    return (dispatch) => {
         for (let i = 0; i < 5; i++) {
             setTimeout(() => {
                 dispatch({

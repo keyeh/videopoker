@@ -12,7 +12,6 @@ export default (props) => {
                 src={getCardUrl(props.card)}
                 alt={`${props.card.value} of ${props.card.suit}s`}
                 onClick={() => props.onClick(props.id)}
-                onLoad={() => props.onLoad(props.id)}
                 style={props.revealed ? {} : { display: "none" }}
             />
             <img

@@ -5702,6 +5702,10 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+react-on-images-loaded@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/react-on-images-loaded/-/react-on-images-loaded-2.1.9.tgz#1e92c066f0eb8427abaac75feffee2e1289b09b3"
+
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"

@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
 import CardHold from "./CardHold";
-import { holdCard, cardImageLoaded } from "./actions/index";
+import { holdCard } from "./actions/index";
 
 class CardContainer extends Component {
     handleCardClick(id) {
         if (!this.props.roundEnded) this.props.holdCard(id);
-    }
-    handleCardLoad(id) {
-        this.props.cardImageLoaded(id);
     }
 
     render() {
@@ -24,7 +21,6 @@ class CardContainer extends Component {
                                 id={key}
                                 card={cards[key]}
                                 onClick={this.handleCardClick.bind(this)}
-                                onLoad={this.handleCardLoad.bind(this)}
                                 revealed={this.props.cardRevealed[key]}
                             />
                         </div>
@@ -35,7 +31,7 @@ class CardContainer extends Component {
     }
 }
 
-const mapDispatchToProps = { holdCard, cardImageLoaded };
+const mapDispatchToProps = { holdCard };
 
 const mapStateToProps = (state) => ({
     hand: state.data.hand,
