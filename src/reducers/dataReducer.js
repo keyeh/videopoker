@@ -1,19 +1,19 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
 import { destructureCard, evaluateHand, parseHand } from "../helpers";
 let defaultState = {
-    hand: null,
+    hand: { 0: {}, 1: {}, 2: {}, 3: {}, 4: {} },
     deckData: null,
-    roundEnded: false,
-    handWin: {}
+    roundEnded: true,
+    handWin: { name: "", win: 0 }
 };
 
 export default (state = defaultState, action) => {
     switch (action.type) {
         case NEW_HAND:
             return {
-                ...defaultState,
                 hand: action.payload.hand,
                 deckData: action.payload.deck,
+                roundEnded: false,
                 handWin: evaluateHand(parseHand(action.payload.hand))
             };
         case HOLD_CARD:

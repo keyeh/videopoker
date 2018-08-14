@@ -13,8 +13,8 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.props.newHand();
-        this.props.revealCards();
+        // this.props.newHand();
+        // this.props.revealCards();
     }
     componentWillMount() {}
     render() {

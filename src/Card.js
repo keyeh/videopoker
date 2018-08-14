@@ -5,21 +5,16 @@ let getCardUrl = (cardName) => {
 };
 
 export default (props) => {
-    return (
-        <div>
+    if (props.card && props.revealed) {
+        return (
             <img
                 className="card"
                 src={getCardUrl(props.card)}
                 alt={`${props.card.value} of ${props.card.suit}s`}
                 onClick={() => props.onClick(props.id)}
-                style={props.revealed ? {} : { display: "none" }}
             />
-            <img
-                className="card"
-                src={IMG_BASE + "RED_BACK.svg"}
-                alt="Back of playing card"
-                style={props.revealed ? { display: "none" } : {}}
-            />
-        </div>
-    );
+        );
+    } else {
+        return <img className="card" src={IMG_BASE + "RED_BACK.svg"} alt="Back of playing card" />;
+    }
 };
