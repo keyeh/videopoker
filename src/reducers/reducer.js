@@ -1,5 +1,5 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
-import { destructureCard, evaluateHand } from "../helpers";
+import { destructureCard, evaluateHand, parseHand } from "../helpers";
 let defaultState = {
     hand: null,
     deckData: null,
@@ -14,7 +14,7 @@ export default (state = defaultState, action) => {
                 ...defaultState,
                 hand: action.payload.hand,
                 deckData: action.payload.deck,
-                handWin: evaluateHand(action.payload.hand)
+                handWin: evaluateHand(parseHand(action.payload.hand))
             };
         case HOLD_CARD:
             let target = { ...state.hand[action.payload] };
@@ -34,7 +34,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 hand: { ...newHand },
                 roundEnded: true,
-                handWin: evaluateHand(newHand)
+                handWin: evaluateHand(parseHand(newHand))
             };
         }
         default:

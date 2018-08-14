@@ -5,11 +5,11 @@ export const destructureCard = (card) => {
     return (({ suit, value }) => ({ suit, value, hold: false }))(card);
 };
 
-const parseHand = (hand) => {
+export const parseHand = (hand) => {
     // convert hand into a format that pokersolver can understand
     return Object.values(hand).map((card) => {
         let value = card.value;
-        if (value === 10) value = "T";
+        if (value === "10") value = "T";
         return `${value}${card.suit[0]}`;
     });
 };
@@ -38,7 +38,7 @@ const evaluatePay = (name) => {
     }
 };
 export const evaluateHand = (hand) => {
-    let solved = Hand.solve(parseHand(hand));
+    let solved = Hand.solve(hand);
     switch (solved.name) {
         case "Two Pair":
         case "Three of a Kind":
@@ -46,9 +46,13 @@ export const evaluateHand = (hand) => {
         case "Flush":
         case "Full House":
         case "Four of a Kind":
-        case "Straight Flush":
-        case "Royal Flush":
             return { name: solved.name, win: evaluatePay(solved.name) };
+        case "Straight Flush":
+            if (solved.descr === "Royal Flush") {
+                return { name: "Royal Flush", win: evaluatePay("Royal Flush") };
+            } else {
+                return { name: solved.name, win: evaluatePay(solved.name) };
+            }
         case "Pair":
             if (
                 solved.descr === "Pair, J's" ||
