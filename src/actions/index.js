@@ -6,3 +6,5 @@ export const HOLD_CARD = "hold card";
 export const DEAL_NEXT_CARDS = "deal next";
 
 export const UI_CARD_IMAGE_LOADED = "card image loaded";
+export const UI_CARD_REVEAL = "card reveal";
+export const UI_CARD_RESET = "card hide";

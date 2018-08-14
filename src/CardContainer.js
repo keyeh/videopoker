@@ -26,6 +26,7 @@ class CardContainer extends Component {
                                 card={cards[key]}
                                 onClick={this.handleCardClick.bind(this)}
                                 onLoad={this.handleCardLoad.bind(this)}
+                                revealed={this.props.cardRevealed[key]}
                             />
                             ;
                         </div>
@@ -40,7 +41,8 @@ const mapDispatchToProps = { holdCard, cardImageLoaded };
 
 const mapStateToProps = (state) => ({
     hand: state.data.hand,
-    roundEnded: state.data.roundEnded
+    roundEnded: state.data.roundEnded,
+    cardRevealed: state.ui.cardRevealed
 });
 export default connect(
     mapStateToProps,

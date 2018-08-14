@@ -1,6 +1,6 @@
 import Cards from "cards";
 import { destructureCard } from "../helpers";
-import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "./index";
+import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS, hideDiscardedCards } from "./index";
 
 export const newHand = () => {
     // Create a new 52 card poker deck
@@ -28,7 +28,10 @@ export const holdCard = (index) => {
 };
 
 export const dealNextCards = () => {
-    return {
-        type: DEAL_NEXT_CARDS
+    return (dispatch) => {
+        dispatch(hideDiscardedCards());
+        dispatch({
+            type: DEAL_NEXT_CARDS
+        });
     };
 };
