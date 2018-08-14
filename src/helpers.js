@@ -59,6 +59,6 @@ export const evaluateHand = (hand) => {
                 return { name: "Jacks or Better", win: evaluatePay("Jacks or Better") };
             }
         default:
-            return { name: "lose", win: 0 };
+            return { name: "", win: 0 };
     }
 };
