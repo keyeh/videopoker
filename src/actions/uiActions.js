@@ -1,4 +1,5 @@
 import { UI_CARD_IMAGE_LOADED, UI_CARD_REVEAL, UI_CARD_RESET } from "./index";
+import { revealCardSound } from "../sounds";
 
 export const cardImageLoaded = () => {
     return {
@@ -24,6 +25,7 @@ export const revealCards = () => {
                     type: UI_CARD_REVEAL,
                     payload: i
                 });
+                revealCardSound();
             }, (i + 1) * 100);
         }
     };
