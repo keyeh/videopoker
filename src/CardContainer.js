@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
+import CardHold from "./CardHold";
 import { holdCard } from "./actions/index";
 import "./CardContainer.css";
 
@@ -14,7 +15,12 @@ class CardContainer extends Component {
         return (
             <div className="cardContainer">
                 {Object.keys(cards).map((key) => {
-                    return <Card key={key} id={key} card={cards[key]} onClick={this.handleCardClick.bind(this)} />;
+                    return (
+                        <div key={key}>
+                            <CardHold hold={cards[key].hold} />
+                            <Card id={key} card={cards[key]} onClick={this.handleCardClick.bind(this)} />;
+                        </div>
+                    );
                 })}
             </div>
         );
