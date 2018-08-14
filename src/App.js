@@ -19,24 +19,22 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="gameContainer">
-                    <PayTableContainer />
-                    <HandStatusContainer />
-                    <CardContainer />
-                    <div className="bottomRow">
-                        <span style={{ textAlign: "left" }}>BET 5</span>
-                        <WinContainer />
-                        <span style={{ textAlign: "right" }}>CREDIT 100</span>
-                    </div>
-                    <div className="buttonRow">
-                        <button />
-                        <button />
-                        <button />
-                        <button />
-                        <button />
-                        <button />
-                        <DealBtnContainer />
-                    </div>
+                <PayTableContainer />
+                <HandStatusContainer />
+                <CardContainer />
+                <div className="bottomRow">
+                    <span style={{ textAlign: "left" }}>BET 5</span>
+                    <WinContainer />
+                    <span style={{ textAlign: "right" }}>CREDIT 100</span>
+                </div>
+                <div className="buttonRow">
+                    <button />
+                    <button />
+                    <button />
+                    <button />
+                    <button />
+                    <button />
+                    <DealBtnContainer />
                 </div>
             </div>
         );

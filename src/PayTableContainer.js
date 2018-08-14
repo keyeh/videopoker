@@ -7,11 +7,7 @@ import { holdCard, cardImageLoaded } from "./actions/index";
 class PayTableContainer extends Component {
     render() {
         let cards = this.props.hand;
-        return (
-            <div className="payTableContainer">
-                <div style={{ width: "100%", height: "25vh", border: "1px solid red" }} />
-            </div>
-        );
+        return <div className="payTableContainer" />;
     }
 }
 
