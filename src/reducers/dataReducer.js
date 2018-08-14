@@ -1,8 +1,9 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
-import { destructureCard, evaluateHand, parseHand } from "../helpers";
+import { evaluateHand } from "../Evaluator";
 let defaultState = {
-    hand: { 0: {}, 1: {}, 2: {}, 3: {}, 4: {} },
-    deckData: null,
+    hand: [null, null, null, null, null],
+    hold: [false, false, false, false, false],
+    deck: [],
     roundEnded: true,
     handWin: { name: "", win: 0 }
 };
@@ -11,30 +12,26 @@ export default (state = defaultState, action) => {
     switch (action.type) {
         case NEW_HAND:
             return {
+                ...defaultState,
                 hand: action.payload.hand,
-                deckData: action.payload.deck,
+                deck: action.payload.deck,
                 roundEnded: false,
-                handWin: evaluateHand(parseHand(action.payload.hand))
+                handWin: evaluateHand(action.payload.hand)
             };
         case HOLD_CARD:
-            let target = { ...state.hand[action.payload] };
-            target.hold = !target.hold;
+            let newHold = [...state.hold];
+            newHold[action.payload] = !state.hold[action.payload];
             return {
                 ...state,
-                hand: { ...state.hand, [action.payload]: target }
+                hold: newHold
             };
         case DEAL_NEXT_CARDS: {
-            let newHand = { ...state.hand };
-            for (let key in state.hand) {
-                if (!state.hand[key].hold) {
-                    newHand[key] = destructureCard(state.deckData.draw());
-                }
-            }
             return {
                 ...state,
-                hand: { ...newHand },
+                hand: action.payload.hand,
                 roundEnded: true,
-                handWin: evaluateHand(parseHand(newHand))
+                handWin: evaluateHand(action.payload.hand),
+                deck: action.payload.deck
             };
         }
         default:

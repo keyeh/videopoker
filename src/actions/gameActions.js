@@ -1,19 +1,15 @@
-import Cards from "cards";
-import { destructureCard } from "../helpers";
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS, hideDiscardedCards, ADD_CREDIT, SUBTRACT_CREDIT } from "./index";
+import CardList from "../CardList";
+import _ from "lodash";
 
 export const newHand = () => {
     // Create a new 52 card poker deck
-    let deck = new Cards.PokerDeck();
-    // Shuffle the deck
-    deck.shuffleAll();
-
+    let deck = _.shuffle(CardList);
     // get hand of 5 cards
-    let hand = {};
+    let hand = [];
     for (let i = 0; i < 5; i++) {
-        hand[i] = destructureCard(deck.draw());
+        hand[i] = deck.pop();
     }
-
     return {
         type: NEW_HAND,
         payload: { hand, deck }
@@ -31,9 +27,17 @@ export const holdCard = (index) => {
 
 export const dealNextCards = () => {
     return (dispatch, getState) => {
+        let deck = getState().data.deck;
+        let hand = [...getState().data.hand];
+        for (let i = 0; i < 5; i++) {
+            if (!getState().data.hold[i]) {
+                hand[i] = deck.pop();
+            }
+        }
         dispatch(hideDiscardedCards());
         dispatch({
-            type: DEAL_NEXT_CARDS
+            type: DEAL_NEXT_CARDS,
+            payload: { hand, deck }
         });
     };
 };

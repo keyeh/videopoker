@@ -1,7 +1,7 @@
 import React from "react";
 const IMG_BASE = "cards/";
 let getCardUrl = (cardName) => {
-    return `${IMG_BASE}${cardName.value}${cardName.suit[0].toUpperCase()}.svg`;
+    return `${IMG_BASE}${cardName.toUpperCase()}.svg`;
 };
 
 export default (props) => {

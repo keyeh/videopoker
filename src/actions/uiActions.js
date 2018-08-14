@@ -8,10 +8,10 @@ export const cardImageLoaded = () => {
 export const hideDiscardedCards = () => {
     // hide everything except for the held cards
     return function(dispatch, getState) {
-        let { hand } = getState().data;
-        for (let key in hand) {
-            if (!hand[key].hold) {
-                dispatch({ type: UI_CARD_RESET, payload: key });
+        let heldCards = getState().data.hold;
+        for (let i = 0; i < 5; i++) {
+            if (!heldCards[i]) {
+                dispatch({ type: UI_CARD_RESET, payload: i });
             }
         }
     };

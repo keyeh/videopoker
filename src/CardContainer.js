@@ -16,7 +16,7 @@ class CardContainer extends Component {
                 {Object.keys(cards).map((key) => {
                     return (
                         <div key={key}>
-                            <CardHold hold={cards[key].hold} />
+                            <CardHold hold={this.props.hold[key]} />
                             <Card
                                 id={key}
                                 card={cards[key]}
@@ -35,6 +35,7 @@ const mapDispatchToProps = { holdCard };
 
 const mapStateToProps = (state) => ({
     hand: state.data.hand,
+    hold: state.data.hold,
     roundEnded: state.data.roundEnded,
     cardRevealed: state.ui.cardRevealed
 });

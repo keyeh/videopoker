@@ -1330,12 +1330,6 @@ capture-stack-trace@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
 
-cards@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/cards/-/cards-0.1.1.tgz#ce4b12bbd36b09e80e539fb9e8f481cb0bfd4db1"
-  dependencies:
-    rand-utils latest
-
 case-sensitive-paths-webpack-plugin@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.1.tgz#3d29ced8c1f124bf6f53846fb3f5894731fdc909"
@@ -5618,10 +5612,6 @@ raf@3.4.0:
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
   dependencies:
     performance-now "^2.1.0"
-
-rand-utils@latest:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rand-utils/-/rand-utils-1.0.0.tgz#3d3bb9201566ce91450cd374a0080e79ed683328"
 
 randomatic@^3.0.0:
   version "3.1.0"
