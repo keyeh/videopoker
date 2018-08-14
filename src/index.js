@@ -13,3 +13,7 @@ ReactDOM.render(
     document.getElementById("root")
 );
 registerServiceWorker();
+
+window.ondragstart = function() {
+    return false;
+};
