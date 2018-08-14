@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { soundToggle } from "./actions/index";
+import { soundToggle } from "../actions/index";
 
 class SoundBtnContainer extends Component {
     handleButton() {

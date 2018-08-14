@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import OnImagesLoaded from "react-on-images-loaded";
-import { cardImageLoaded } from "./actions/index";
+import { cardImageLoaded } from "../actions/index";
 
 // Force browser to prefetch and cache all svgs
 class DealBtnContainer extends Component {

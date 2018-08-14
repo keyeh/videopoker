@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
 import { newHand, holdCard, dealNextCards, revealCards } from "./actions/index";
-import CardContainer from "./CardContainer";
-import DealBtnContainer from "./DealBtnContainer";
-import SoundBtnContainer from "./SoundBtnContainer";
-import WinContainer from "./WinContainer";
-import HandStatusContainer from "./HandStatusContainer";
-import PayTableContainer from "./PayTableContainer";
-import CreditContainer from "./CreditContainer";
-import ImagePreload from "./ImagePreload";
+import CardContainer from "./components/CardContainer";
+import DealBtnContainer from "./components/DealBtnContainer";
+import SoundBtnContainer from "./components/SoundBtnContainer";
+import WinContainer from "./components/WinContainer";
+import HandStatusContainer from "./components/HandStatusContainer";
+import PayTableContainer from "./components/PayTableContainer";
+import CreditContainer from "./components/CreditContainer";
+import ImagePreload from "./components/ImagePreload";
 class App extends Component {
     render() {
         return (
