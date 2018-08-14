@@ -4,7 +4,7 @@ export default (props) => (
     <div className="cardHold">
         <span>
             &nbsp;
-            {props.hold && "HOLD"}
+            {props.hold && "HELD"}
             &nbsp;
         </span>
     </div>

@@ -1,28 +1,50 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: blue;
+    color: red;
+}
+span {
+    font-size: 2em;
+    -webkit-text-stroke: 2px yellow;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.gameContainer {
+    /* width: max-content; */
+    margin: 0 auto;
+}
+.handStatusContainer {
+    padding-top: "20px";
+    padding-bottom: "20px";
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.cardHold span {
+    font-size: 1em;
+    -webkit-text-stroke: 0;
+    color: white;
+}
+.cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+img.card {
+    width: 100%;
+}
+.cardHold {
+    padding: 10px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.bottomRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    padding-top: 15px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.buttonRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    padding-top: 50px;
 }

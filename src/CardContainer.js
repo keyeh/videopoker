@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Card from "./Card";
 import CardHold from "./CardHold";
 import { holdCard, cardImageLoaded } from "./actions/index";
-import "./CardContainer.css";
 
 class CardContainer extends Component {
     handleCardClick(id) {
@@ -28,7 +27,6 @@ class CardContainer extends Component {
                                 onLoad={this.handleCardLoad.bind(this)}
                                 revealed={this.props.cardRevealed[key]}
                             />
-                            ;
                         </div>
                     );
                 })}

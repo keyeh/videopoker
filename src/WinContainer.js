@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 class WinContainer extends Component {
     render() {
         if (this.props.roundEnded && this.props.win) {
-            return <div className="winContainer">You win: {this.props.win}</div>;
+            return <div>WIN {this.props.win}</div>;
         }
-        return null;
+        return <div>&nbsp;</div>;
     }
 }
 

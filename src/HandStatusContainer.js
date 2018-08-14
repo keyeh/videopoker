@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 
 class HandStatusContainer extends Component {
     render() {
-        return <div className="handStatusContainer">{this.props.status}</div>;
+        return (
+            <div className="handStatusContainer">
+                <span>{this.props.status.toUpperCase()}</span>
+            </div>
+        );
     }
 }
 
