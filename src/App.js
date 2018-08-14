@@ -5,6 +5,7 @@ import { newHand, holdCard, dealNextCards } from "./actions/index";
 import CardContainer from "./CardContainer";
 import DealBtnContainer from "./DealBtnContainer";
 import WinContainer from "./WinContainer";
+import HandStatusContainer from "./HandStatusContainer";
 class App extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +21,7 @@ class App extends Component {
                 <CardContainer />
                 <DealBtnContainer />
                 <br />
-                {this.props.data.handWin.name}
+                <HandStatusContainer />
                 <br />
                 <WinContainer />
             </div>
