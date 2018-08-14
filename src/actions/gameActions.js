@@ -33,7 +33,6 @@ export const dealNextCards = () => {
         dispatch({
             type: DEAL_NEXT_CARDS
         });
-        dispatch(addCredits());
     };
 };
 
