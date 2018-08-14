@@ -18,15 +18,21 @@ export const hideDiscardedCards = () => {
     };
 };
 export const revealCards = () => {
-    return (dispatch) => {
-        for (let i = 0; i < 5; i++) {
+    return (dispatch, getState) => {
+        let cardRevealState = getState().ui.cardRevealed;
+        let toReveal = Object.keys(cardRevealState).filter(function(key) {
+            return !cardRevealState[key];
+        });
+        let ms = 0;
+        for (let i of toReveal) {
             setTimeout(() => {
                 dispatch({
                     type: UI_CARD_REVEAL,
                     payload: i
                 });
                 revealCardSound();
-            }, (i + 1) * 100);
+            }, ms);
+            ms += 110;
         }
     };
 };
