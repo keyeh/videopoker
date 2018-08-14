@@ -9,16 +9,13 @@ const parseHand = (hand) => {
     // convert hand into a format that pokersolver can understand
     return Object.values(hand).map((card) => {
         let value = card.value;
-        if (value == 10) value = "T";
+        if (value === 10) value = "T";
         return `${value}${card.suit[0]}`;
     });
 };
 const evaluatePay = (name) => {
     switch (name) {
-        case "Pair, J's":
-        case "Pair, Q's":
-        case "Pair, K's":
-        case "Pair, A's":
+        case "Jacks or Better":
             return 5;
         case "Two Pair":
             return 10;
@@ -42,7 +39,6 @@ const evaluatePay = (name) => {
 };
 export const evaluateHand = (hand) => {
     let solved = Hand.solve(parseHand(hand));
-
     switch (solved.name) {
         case "Two Pair":
         case "Three of a Kind":
@@ -53,11 +49,15 @@ export const evaluateHand = (hand) => {
         case "Straight Flush":
         case "Royal Flush":
             return { name: solved.name, win: evaluatePay(solved.name) };
-        case "Pair, J's":
-        case "Pair, Q's":
-        case "Pair, K's":
-        case "Pair, A's":
-            return { name: "Jacks or Better", win: evaluatePay(solved.name) };
+        case "Pair":
+            if (
+                solved.descr === "Pair, J's" ||
+                solved.descr === "Pair, Q's" ||
+                solved.descr === "Pair, K's" ||
+                solved.descr === "Pair, A's"
+            ) {
+                return { name: "Jacks or Better", win: evaluatePay("Jacks or Better") };
+            }
         default:
             return { name: "lose", win: 0 };
     }

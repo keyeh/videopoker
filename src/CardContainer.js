@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
-import { newHand, holdCard, dealNextCards } from "./actions/index";
+import { holdCard } from "./actions/index";
 import "./CardContainer.css";
 
 class CardContainer extends Component {

@@ -4,7 +4,7 @@ let defaultState = {
     hand: null,
     deckData: null,
     roundEnded: false,
-    roundData: {}
+    handWin: {}
 };
 
 export default (state = defaultState, action) => {
@@ -13,7 +13,8 @@ export default (state = defaultState, action) => {
             return {
                 ...defaultState,
                 hand: action.payload.hand,
-                deckData: action.payload.deck
+                deckData: action.payload.deck,
+                handWin: evaluateHand(action.payload.hand)
             };
         case HOLD_CARD:
             let target = { ...state.hand[action.payload] };
@@ -33,7 +34,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 hand: { ...newHand },
                 roundEnded: true,
-                roundData: evaluateHand(newHand)
+                handWin: evaluateHand(newHand)
             };
         }
         default:

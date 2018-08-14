@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
 import { newHand, holdCard, dealNextCards } from "./actions/index";
 import CardContainer from "./CardContainer";
 import DealBtnContainer from "./DealBtnContainer";
-
+import WinContainer from "./WinContainer";
 class App extends Component {
     constructor(props) {
         super(props);
@@ -21,9 +20,9 @@ class App extends Component {
                 <CardContainer />
                 <DealBtnContainer />
                 <br />
-                {this.props.data.roundData.name}
+                {this.props.data.handWin.name}
                 <br />
-                You win: {this.props.data.roundData.win}
+                <WinContainer />
             </div>
         );
     }
