@@ -35,7 +35,6 @@ span {
 }
 img.card {
     width: 100%;
-    cursor: pointer;
 }
 .cardHold {
     padding: 10px;
