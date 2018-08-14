@@ -11,10 +11,6 @@ import PayTableContainer from "./PayTableContainer";
 import CreditContainer from "./CreditContainer";
 import ImagePreload from "./ImagePreload";
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-    componentWillMount() {}
     render() {
         return (
             <div className="App">

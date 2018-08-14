@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Card from "./Card";
-import { newHand, holdCard, dealNextCards, revealCards, subtractCredits, addCredits } from "./actions/index";
+import { newHand, dealNextCards, revealCards, subtractCredits, addCredits } from "./actions/index";
 
 class DealBtnContainer extends Component {
     handleButton() {

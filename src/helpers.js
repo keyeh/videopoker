@@ -1,3 +1,5 @@
+/*eslint no-fallthrough: 0 */
+
 import { Hand } from "pokersolver";
 
 export const destructureCard = (card) => {
