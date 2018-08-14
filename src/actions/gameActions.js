@@ -1,7 +1,6 @@
 import Cards from "cards";
 import { destructureCard } from "../helpers";
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS, hideDiscardedCards, ADD_CREDIT, SUBTRACT_CREDIT } from "./index";
-import { holdCardSound } from "../sounds";
 
 export const newHand = () => {
     // Create a new 52 card poker deck
@@ -22,10 +21,11 @@ export const newHand = () => {
 };
 
 export const holdCard = (index) => {
-    holdCardSound();
-    return {
-        type: HOLD_CARD,
-        payload: index
+    return (dispatch, getState) => {
+        dispatch({
+            type: HOLD_CARD,
+            payload: index
+        });
     };
 };
 

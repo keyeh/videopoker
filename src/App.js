@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { newHand, holdCard, dealNextCards, revealCards } from "./actions/index";
 import CardContainer from "./CardContainer";
 import DealBtnContainer from "./DealBtnContainer";
+import SoundBtnContainer from "./SoundBtnContainer";
 import WinContainer from "./WinContainer";
 import HandStatusContainer from "./HandStatusContainer";
 import PayTableContainer from "./PayTableContainer";
@@ -12,9 +13,6 @@ import ImagePreload from "./ImagePreload";
 class App extends Component {
     constructor(props) {
         super(props);
-
-        // this.props.newHand();
-        // this.props.revealCards();
     }
     componentWillMount() {}
     render() {
@@ -31,7 +29,7 @@ class App extends Component {
                 </div>
                 <div className="buttonRow">
                     <button />
-                    <button />
+                    <SoundBtnContainer />
                     <button />
                     <button />
                     <button />

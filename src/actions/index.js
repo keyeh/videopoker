@@ -11,3 +11,5 @@ export const SUBTRACT_CREDIT = "subtract credits";
 export const UI_CARD_IMAGE_LOADED = "card image loaded";
 export const UI_CARD_REVEAL = "card reveal";
 export const UI_CARD_RESET = "card reset visibility";
+
+export const UI_SOUND_TOGGLE = "sounds toggle";

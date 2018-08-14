@@ -1,5 +1,4 @@
-import { UI_CARD_IMAGE_LOADED, UI_CARD_REVEAL, UI_CARD_RESET } from "./index";
-import { revealCardSound } from "../sounds";
+import { UI_CARD_IMAGE_LOADED, UI_CARD_REVEAL, UI_CARD_RESET, UI_SOUND_TOGGLE } from "./index";
 
 export const cardImageLoaded = () => {
     return {
@@ -30,9 +29,14 @@ export const revealCards = () => {
                     type: UI_CARD_REVEAL,
                     payload: i
                 });
-                revealCardSound();
             }, ms);
             ms += 110;
         }
+    };
+};
+
+export const soundToggle = () => {
+    return {
+        type: UI_SOUND_TOGGLE
     };
 };
