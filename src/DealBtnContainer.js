@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
-import { newHand, holdCard, dealNextCards } from "./actions/index";
+import { newHand, holdCard, dealNextCards, subtractCredits } from "./actions/index";
 
 class DealBtnContainer extends Component {
     handleButton() {
         if (this.props.roundEnded) {
             this.props.newHand();
+            this.props.subtractCredits();
         } else {
             this.props.dealNextCards();
         }
@@ -17,7 +18,7 @@ class DealBtnContainer extends Component {
     }
 }
 
-const mapDispatchToProps = { newHand, dealNextCards };
+const mapDispatchToProps = { newHand, dealNextCards, subtractCredits };
 
 const mapStateToProps = (state) => ({
     roundEnded: state.data.roundEnded

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class WinContainer extends Component {
     render() {
-        if (this.props.roundEnded && this.props.win) {
+        if (this.props.roundEnded) {
             return <span className="winContainer">WIN {this.props.win}</span>;
         }
         return <span>&nbsp;</span>;

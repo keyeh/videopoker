@@ -7,6 +7,7 @@ import DealBtnContainer from "./DealBtnContainer";
 import WinContainer from "./WinContainer";
 import HandStatusContainer from "./HandStatusContainer";
 import PayTableContainer from "./PayTableContainer";
+import CreditContainer from "./CreditContainer";
 class App extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +26,7 @@ class App extends Component {
                 <div className="bottomRow">
                     <span style={{ textAlign: "left" }}>BET 5</span>
                     <WinContainer />
-                    <span style={{ textAlign: "right" }}>CREDIT 100</span>
+                    <CreditContainer />
                 </div>
                 <div className="buttonRow">
                     <button />
