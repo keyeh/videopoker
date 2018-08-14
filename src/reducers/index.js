@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
-import reducer from "./reducer";
+import dataReducer from "./dataReducer";
+import uiReducer from "./uiReducer";
 export default combineReducers({
-    data: reducer
+    data: dataReducer,
+    ui: uiReducer
 });

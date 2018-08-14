@@ -11,6 +11,7 @@ export default (props) => (
             src={getCard(`${props.card.value}${props.card.suit[0].toUpperCase()}`)}
             alt={`${props.card.value} of ${props.card.suit}s`}
             onClick={() => props.onClick(props.id)}
+            onLoad={() => props.onLoad(props.id)}
         />
     </div>
 );
