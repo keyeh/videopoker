@@ -1,18 +1,19 @@
 # Video Poker
 
-> A video poker game built using React and Redux.
+> A "9-6 Jacks or Better" video poker game built using React and Redux. It's free to play!
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
-A "9-6 Jacks or Better" video poker game built using React. It's free to play!
 
 ![](screenshot.png)
 
 ## How to play
 
 Visit [https://keyeh.io/videopoker](https://keyeh.io/videopoker) to play.
+
 Press the Deal button and select the cards you want to hold. Then press deal again to see if you won.
+
 You automatically bet 5 credits each time. Once you hit zero credits it'll go negative -- there's infinite credits. Or refresh the page to reset to 50 credits.
 
 _For a simple strategy, please refer to the [Wizard of Odds page][https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/]._
