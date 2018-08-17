@@ -1,6 +1,6 @@
 /*eslint no-fallthrough: 0 */
 
-import { Hand } from "pokersolver";
+import { Hand } from "./pokersolver";
 
 const evaluatePay = (name) => {
     switch (name) {
