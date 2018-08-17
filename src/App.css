@@ -27,7 +27,7 @@ span {
     border-collapse: collapse;
 }
 /* table > tr:nth-child(3) > td:nth-child(1) */
-.payTable > tr > td:nth-child(1) {
+.payTable tr > td:nth-child(1) {
     text-align: left;
 }
 .payTable td {
