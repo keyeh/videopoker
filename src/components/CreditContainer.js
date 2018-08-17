@@ -20,11 +20,11 @@ class CreditContainer extends Component {
         if (this.state.currentAmount < this.props.credits) {
             let delta = this.props.credits - this.state.currentAmount;
             if (delta <= 20) {
-                playWinSound("1");
+                if (this.props.sound) playWinSound("1");
                 return 0.65;
             }
             if (delta <= 250) {
-                playWinSound("2");
+                if (this.props.sound) playWinSound("2");
                 return 1.2;
             }
             return 5; //full house
@@ -57,7 +57,8 @@ class CreditContainer extends Component {
 const mapDispatchToProps = {};
 
 const mapStateToProps = (state) => ({
-    credits: state.credit.amount
+    credits: state.credit.amount,
+    sound: state.ui.soundOption
 });
 export default connect(
     mapStateToProps,
