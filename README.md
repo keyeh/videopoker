@@ -16,7 +16,7 @@ Press the Deal button and select the cards you want to hold. Then press deal aga
 
 You automatically bet 5 credits each time. Once you hit zero credits it'll go negative -- there's infinite credits. Or refresh the page to reset to 50 credits.
 
-_For a simple strategy, please refer to the [Wizard of Odds page][https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/]._
+_For a simple strategy, please refer to the [Wizard of Odds page](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/).
 
 ## Development setup
 
