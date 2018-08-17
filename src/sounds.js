@@ -15,3 +15,12 @@ export const holdCardSound = () => {
         return;
     }
 };
+
+export const playWinSound = (duration) => {
+    try {
+        let audio = new Audio(`sounds/win${duration}.mp3`);
+        audio.play();
+    } catch (e) {
+        return;
+    }
+};
