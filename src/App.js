@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import { connect } from "react-redux";
-import { newHand, holdCard, dealNextCards, revealCards } from "./actions/index";
 import CardContainer from "./components/CardContainer";
 import DealBtnContainer from "./components/DealBtnContainer";
 import SoundBtnContainer from "./components/SoundBtnContainer";
@@ -37,12 +35,4 @@ class App extends Component {
     }
 }
 
-const mapDispatchToProps = { newHand, holdCard, dealNextCards, revealCards };
-
-const mapStateToProps = (state) => ({
-    ...state
-});
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export default App;
