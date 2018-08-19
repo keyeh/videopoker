@@ -23,11 +23,21 @@ span {
     color: yellow;
     background-color: darkblue;
     text-align: right;
-    font-size: 1.25em;
     border-collapse: collapse;
 }
-/* table > tr:nth-child(3) > td:nth-child(1) */
-.payTable tr > td:nth-child(1) {
+.payTable span {
+    font-size: 1.25em;
+    -webkit-text-stroke: 0;
+}
+.payTable span.highlight {
+    color: white;
+    -webkit-animation: blink 1s steps(1) infinite;
+    -moz-animation: blink 1s steps(1) infinite;
+    -o-animation: blink 1s steps(1) infinite;
+    animation: blink 1s steps(1) infinite;
+}
+
+.payTable tr td:nth-child(1) {
     text-align: left;
 }
 .payTable td {
@@ -83,7 +93,56 @@ img.card {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
 }
-.buttonRow > button {
+.buttonRow button {
     height: 100%;
     cursor: pointer;
+}
+
+/* Blink Animation */
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

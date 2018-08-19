@@ -11,18 +11,26 @@ class PayTableContainer extends Component {
     getKey() {
         return this.keyCount++;
     }
+
     render() {
         return (
             <div className="payTableContainer">
                 <table className="payTable">
                     <tbody>
-                        {PayTableData.map((row) => (
-                            <tr key={this.getKey()}>
-                                {row.map((c) => (
-                                    <td key={this.getKey()}>{typeof c === "object" ? c.display : c}</td>
-                                ))}
-                            </tr>
-                        ))}
+                        {PayTableData.map((row) => {
+                            const isWinningRow = this.props.handWinName === row[0].pokersolver;
+                            return (
+                                <tr key={this.getKey()}>
+                                    {row.map((c) => (
+                                        <td key={this.getKey()}>
+                                            <span className={isWinningRow ? "highlight" : ""}>
+                                                {typeof c === "object" ? c.display : c}
+                                            </span>
+                                        </td>
+                                    ))}
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
@@ -34,7 +42,7 @@ const mapDispatchToProps = {};
 
 const mapStateToProps = (state) => ({
     roundEnded: state.data.roundEnded,
-    handWin: state.data.handWin.name
+    handWinName: state.data.handWin.name
 });
 export default connect(
     mapStateToProps,
