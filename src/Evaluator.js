@@ -1,40 +1,28 @@
 /*eslint no-fallthrough: 0 */
 
 import { Hand } from "./pokersolver";
+import PayTableData from "./PayTableData";
 
 const evaluatePay = (name) => {
-    switch (name) {
-        case "Jacks or Better":
-            return 5;
-        case "Two Pair":
-            return 10;
-        case "Three of a Kind":
-            return 15;
-        case "Straight":
-            return 20;
-        case "Flush":
-            return 30;
-        case "Full House":
-            return 45;
-        case "Four of a Kind":
-            return 125;
-        case "Straight Flush":
-            return 250;
-        case "Royal Flush":
-            return 4000;
-        default:
-            return 0;
+    for (let row of PayTableData) {
+        if (row[0] === name.toUpperCase()) {
+            return row[5]; // bet 5
+        }
     }
+    return NaN; // this should never happen....
 };
 export const evaluateHand = (hand) => {
     let solved = Hand.solve(hand);
     switch (solved.name) {
         case "Two Pair":
+            return { name: solved.name, win: evaluatePay("2 PAIR") };
         case "Three of a Kind":
+            return { name: solved.name, win: evaluatePay("3 OF A KIND") };
+        case "Four of a Kind":
+            return { name: solved.name, win: evaluatePay("4 OF A KIND") };
         case "Straight":
         case "Flush":
         case "Full House":
-        case "Four of a Kind":
             return { name: solved.name, win: evaluatePay(solved.name) };
         case "Straight Flush":
             if (solved.descr === "Royal Flush") {
