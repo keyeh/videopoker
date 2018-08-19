@@ -2,15 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PayTableData from "../PayTableData";
 class PayTableContainer extends Component {
+    constructor(props) {
+        super(props);
+
+        this.keyCount = 0;
+        this.getKey = this.getKey.bind(this);
+    }
+    getKey() {
+        return this.keyCount++;
+    }
     render() {
         return (
             <div className="payTableContainer">
                 <table className="payTable">
                     <tbody>
                         {PayTableData.map((row) => (
-                            <tr>
+                            <tr key={this.getKey()}>
                                 {row.map((c) => (
-                                    <td>{c}</td>
+                                    <td key={this.getKey()}>{typeof c === "object" ? c.display : c}</td>
                                 ))}
                             </tr>
                         ))}
@@ -24,8 +33,8 @@ class PayTableContainer extends Component {
 const mapDispatchToProps = {};
 
 const mapStateToProps = (state) => ({
-    hand: state.data.hand,
-    roundEnded: state.data.roundEnded
+    roundEnded: state.data.roundEnded,
+    handWin: state.data.handWin.name
 });
 export default connect(
     mapStateToProps,
