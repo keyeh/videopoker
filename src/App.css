@@ -1,9 +1,12 @@
+div {
+    overflow: hidden;
+}
 .App {
+    font-family: "Press Start 2P", cursive;
     display: grid;
-    padding-top: 5vh;
-    height: 95vh;
-    grid-template-rows: 3fr 1fr 1fr 1fr 1fr;
-    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 125vh;
     background-color: blue;
     color: red;
 }
@@ -11,11 +14,15 @@ span {
     font-size: 2rem;
     -webkit-text-stroke: 2px yellow;
     padding: 0 2px 0 2px;
+    width: 100%;
 }
 
+.padded {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .payTableContainer {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-top: 15px;
 }
 .payTable {
     width: 100%;
@@ -39,7 +46,7 @@ span {
     text-align: left;
 }
 .payTable td {
-    padding: 5px;
+    padding: 3px;
     border-left: 3px solid yellow;
 }
 .payTable td:first-child {
@@ -52,7 +59,10 @@ span {
 .handStatusContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+    line-height: 5rem;
+    padding-top: 10px;
+    /* justify-content: center; */
 }
 
 .cardHold span {
@@ -63,13 +73,18 @@ span {
 .cardContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    grid-column-gap: 15px;
+    text-align: center;
+    margin: 0 auto;
 }
 img.card {
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
+}
+@media screen and (orientation: landscape) {
+    img.card {
+        max-height: 25vh;
+    }
 }
 .cardHold {
     padding: 10px 0 10px 0;
@@ -77,8 +92,6 @@ img.card {
 }
 
 .bottomRow {
-    padding-left: 5vw;
-    padding-right: 5vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -95,26 +108,33 @@ img.card {
 
 .buttonRow {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     grid-column-gap: 10px;
-    align-items: stretch;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    align-items: end;
 }
 .buttonRow .logo {
-    width: 100%;
+    height: 10px;
 }
 button {
+    font-family: "Press Start 2P", cursive;
     cursor: pointer;
-    margin: 3px;
     text-align: center;
+    color: black;
+    font-size: 1.25rem;
     background: #e0c725;
     border-radius: 2px;
     border-color: rgb(221, 221, 221);
     border-width: 2px;
     border-style: outset;
     box-shadow: 0 0 0 1px #9e9f27, 0 0 0 3px black;
+    height: 75px;
 }
 button:active {
     border-style: inset;
+    color: white;
 }
 
 /* Blink Animation */
@@ -132,17 +152,17 @@ button:active {
 
 /* Responsive */
 :root {
-    font-size: 17px;
+    font-size: 14px;
 }
 @media all and (max-width: 980px) {
-    :root {
-        font-size: 14px;
-    }
     .App {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 2.3fr 1fr 1.5fr 1fr 1fr;
     }
     .payTable td {
         padding: 0 3px 0 3px;
+    }
+    .cardContainer {
+        grid-column-gap: 20px;
     }
 }
 @media all and (max-width: 736px) {
@@ -158,13 +178,20 @@ button:active {
 }
 @media all and (max-width: 480px) {
     :root {
-        font-size: 7px;
+        font-size: 8px;
+    }
+    .padded {
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .handStatusContainer span {
         font-size: 3rem;
     }
-    .payTable td {
-        padding-bottom: 3px;
+    .payTableContainer {
+        padding-top: 10px;
+    }
+    .payTable span {
+        font-size: 1.15rem;
     }
     .cardContainer {
         grid-column-gap: 10px;
@@ -173,23 +200,19 @@ button:active {
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: min-content;
         grid-row-gap: 10px;
-        padding-top: 30px;
+        align-content: center;
     }
     .bottomRow span {
         -webkit-text-stroke: 1px yellow;
         padding: 0 1px 0 1px;
+    }
+    button {
+        font-size: 1.5rem;
     }
     .creditContainer {
         text-align: left;
     }
     .winContainer {
         text-align: right;
-    }
-
-    .payTableContainer,
-    .cardContainer,
-    .bottomRow {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 }

@@ -12,7 +12,7 @@ class CardContainer extends Component {
     render() {
         let cards = this.props.hand;
         return (
-            <div className="cardContainer">
+            <div className="cardContainer padded">
                 {Object.keys(cards).map((key) => {
                     return (
                         <div key={key}>

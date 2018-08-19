@@ -14,7 +14,7 @@ class PayTableContainer extends Component {
 
     render() {
         return (
-            <div className="payTableContainer">
+            <div className="payTableContainer padded">
                 <table className="payTable">
                     <tbody>
                         {PayTableData.map((row) => {

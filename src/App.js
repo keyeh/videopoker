@@ -18,7 +18,7 @@ class App extends Component {
                 <PayTableContainer />
                 <HandStatusContainer />
                 <CardContainer />
-                <div className="bottomRow">
+                <div className="bottomRow padded">
                     <span className="bet">BET 5</span>
                     <WinContainer />
                     <CreditContainer />
@@ -27,7 +27,6 @@ class App extends Component {
                     <button>HELP</button>
                     <SoundBtnContainer />
                     <img className="logo" src={logo} alt="logo" />
-                    <button>&nbsp;</button>
                     <DealBtnContainer />
                 </div>
             </div>

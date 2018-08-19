@@ -19,13 +19,23 @@ You automatically bet 5 credits each time. Once you hit zero credits it'll go ne
 
 ## Development setup
 
-Requires Node.JS and Yarn
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+### Prerequisites
+
+1.  Node.JS
+2.  Yarn
+
+### Development server
+
+Download the repo or `git clone https://github.com/keyeh/videopoker.git` and `cd` into the directory
 
 ```sh
-git clone https://github.com/keyeh/videopoker.git
 yarn install
 npm run
 ```
+
+Open browser to http://localhost:3000/
 
 ## Release History
 

@@ -16,7 +16,7 @@ class DealBtnContainer extends Component {
     }
 
     render() {
-        return <button onClick={this.handleButton.bind(this)}>Deal</button>;
+        return <button onClick={this.handleButton.bind(this)}>DEAL</button>;
     }
 }
 
