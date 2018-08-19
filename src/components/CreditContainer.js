@@ -45,7 +45,7 @@ class CreditContainer extends Component {
                 prefix="CREDIT "
             >
                 {({ countUpRef }) => (
-                    <div style={{ textAlign: "right" }}>
+                    <div className="creditContainer">
                         <span ref={countUpRef} />
                     </div>
                 )}

@@ -8,6 +8,8 @@ import HandStatusContainer from "./components/HandStatusContainer";
 import PayTableContainer from "./components/PayTableContainer";
 import CreditContainer from "./components/CreditContainer";
 import ImagePreload from "./components/ImagePreload";
+import viewportUnitsBuggyfill from "viewport-units-buggyfill";
+import logo from "./logo.svg";
 class App extends Component {
     render() {
         return (
@@ -17,22 +19,22 @@ class App extends Component {
                 <HandStatusContainer />
                 <CardContainer />
                 <div className="bottomRow">
-                    <span style={{ textAlign: "left" }}>BET 5</span>
+                    <span className="bet">BET 5</span>
                     <WinContainer />
                     <CreditContainer />
                 </div>
                 <div className="buttonRow">
-                    <button />
+                    <button>HELP</button>
                     <SoundBtnContainer />
-                    <button />
-                    <button />
-                    <button />
-                    <button />
+                    <img className="logo" src={logo} alt="logo" />
+                    <button>&nbsp;</button>
                     <DealBtnContainer />
                 </div>
             </div>
         );
     }
 }
-
+document.addEventListener("DOMContentLoaded", function(event) {
+    viewportUnitsBuggyfill.init();
+});
 export default App;

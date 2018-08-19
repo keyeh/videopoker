@@ -13,7 +13,8 @@
         "react-redux": "^5.0.7",
         "react-scripts": "1.1.4",
         "redux": "^4.0.0",
-        "redux-thunk": "^2.3.0"
+        "redux-thunk": "^2.3.0",
+        "viewport-units-buggyfill": "^0.6.2"
     },
     "homepage": "https://keyeh.github.io/videopoker",
     "scripts": {

@@ -21,8 +21,13 @@ class PayTableContainer extends Component {
                             const isWinningRow = this.props.handWinName === row[0].pokersolver;
                             return (
                                 <tr key={this.getKey()}>
-                                    {row.map((c) => (
-                                        <td key={this.getKey()}>
+                                    {row.map((c, index) => (
+                                        <td
+                                            key={this.getKey()}
+                                            className={
+                                                index === 5 ? "active" : "" /* todo when we implement changing bets*/
+                                            }
+                                        >
                                             <span className={isWinningRow ? "highlight" : ""}>
                                                 {typeof c === "object" ? c.display : c}
                                             </span>

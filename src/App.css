@@ -8,8 +8,9 @@
     color: red;
 }
 span {
-    font-size: 2em;
+    font-size: 2rem;
     -webkit-text-stroke: 2px yellow;
+    padding: 0 2px 0 2px;
 }
 
 .payTableContainer {
@@ -26,7 +27,8 @@ span {
     border-collapse: collapse;
 }
 .payTable span {
-    font-size: 1.25em;
+    font-size: 1.25rem;
+    -webkit-text-stroke: 0;
 }
 .payTable span.highlight {
     color: white;
@@ -43,7 +45,7 @@ span {
 .payTable td:first-child {
     border-left: none;
 }
-.payTable td:last-child {
+.payTable td.active {
     background-color: red;
 }
 
@@ -54,7 +56,7 @@ span {
 }
 
 .cardHold span {
-    font-size: 1em;
+    font-size: 1rem;
     -webkit-text-stroke: 0;
     color: white;
 }
@@ -67,9 +69,10 @@ span {
 }
 img.card {
     width: 100%;
+    cursor: pointer;
 }
 .cardHold {
-    padding: 10px;
+    padding: 10px 0 10px 0;
     text-align: center;
 }
 
@@ -80,18 +83,38 @@ img.card {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
+.bet {
+    text-align: left;
+}
 .winContainer {
     text-align: center;
+}
+.creditContainer {
+    text-align: right;
 }
 
 .buttonRow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 10px;
+    align-items: stretch;
 }
-.buttonRow button {
-    height: 100%;
+.buttonRow .logo {
+    width: 100%;
+}
+button {
     cursor: pointer;
+    margin: 3px;
+    text-align: center;
+    background: #e0c725;
+    border-radius: 2px;
+    border-color: rgb(221, 221, 221);
+    border-width: 2px;
+    border-style: outset;
+    box-shadow: 0 0 0 1px #9e9f27, 0 0 0 3px black;
+}
+button:active {
+    border-style: inset;
 }
 
 /* Blink Animation */
@@ -104,5 +127,69 @@ img.card {
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Responsive */
+:root {
+    font-size: 17px;
+}
+@media all and (max-width: 980px) {
+    :root {
+        font-size: 14px;
+    }
+    .App {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .payTable td {
+        padding: 0 3px 0 3px;
+    }
+}
+@media all and (max-width: 736px) {
+    :root {
+        font-size: 12px;
+    }
+    .payTable tr:first-child td {
+        padding-top: 5px;
+    }
+    .payTable tr:last-child td {
+        padding-bottom: 5px;
+    }
+}
+@media all and (max-width: 480px) {
+    :root {
+        font-size: 7px;
+    }
+    .handStatusContainer span {
+        font-size: 3rem;
+    }
+    .payTable td {
+        padding-bottom: 3px;
+    }
+    .cardContainer {
+        grid-column-gap: 10px;
+    }
+    .bottomRow {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        grid-row-gap: 10px;
+        padding-top: 30px;
+    }
+    .bottomRow span {
+        -webkit-text-stroke: 1px yellow;
+        padding: 0 1px 0 1px;
+    }
+    .creditContainer {
+        text-align: left;
+    }
+    .winContainer {
+        text-align: right;
+    }
+
+    .payTableContainer,
+    .cardContainer,
+    .bottomRow {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
