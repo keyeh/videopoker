@@ -5,7 +5,6 @@
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
-
 ![](screenshot.png)
 
 ## How to play
@@ -16,7 +15,7 @@ Press the Deal button and select the cards you want to hold. Then press deal aga
 
 You automatically bet 5 credits each time. Once you hit zero credits it'll go negative -- there's infinite credits. Or refresh the page to reset to 50 credits.
 
-_For a simple strategy, please refer to the [Wizard of Odds page](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/).
+\_For a simple strategy, please refer to the [Wizard of Odds page](https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/).
 
 ## Development setup
 
@@ -30,6 +29,8 @@ npm run
 
 ## Release History
 
+-   0.2.0
+    -   Add highlight and blink effect to a winning hand in the paytable
 -   0.1.0
     -   The first proper release
 -   0.0.1
