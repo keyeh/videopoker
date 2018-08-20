@@ -20,11 +20,11 @@ class CreditContainer extends Component {
         if (this.state.currentAmount < this.props.credits) {
             let delta = this.props.credits - this.state.currentAmount;
             if (delta <= 20) {
-                if (this.props.sound) playWinSound("1");
+                if (this.props.sound) playWinSound(1);
                 return 0.65;
             }
             if (delta <= 250) {
-                if (this.props.sound) playWinSound("2");
+                if (this.props.sound) playWinSound(2);
                 return 1.2;
             }
             return 5; //full house

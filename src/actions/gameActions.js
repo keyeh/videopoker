@@ -1,5 +1,5 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS, hideDiscardedCards, ADD_CREDIT, SUBTRACT_CREDIT } from "./index";
-import CardList from "../CardList";
+import CardList from "../lib/CardList";
 import _ from "lodash";
 
 export const newHand = () => {

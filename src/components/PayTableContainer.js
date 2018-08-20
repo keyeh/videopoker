@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PayTableData from "../PayTableData";
+import PayTableData from "../lib/PayTableData";
 class PayTableContainer extends Component {
     constructor(props) {
         super(props);

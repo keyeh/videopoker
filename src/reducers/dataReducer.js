@@ -1,5 +1,5 @@
 import { NEW_HAND, HOLD_CARD, DEAL_NEXT_CARDS } from "../actions/index";
-import { evaluateHand } from "../Evaluator";
+import { evaluateHand } from "../lib/Evaluator";
 let defaultState = {
     hand: [null, null, null, null, null],
     hold: [false, false, false, false, false],

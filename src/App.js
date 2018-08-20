@@ -8,7 +8,7 @@ import HandStatusContainer from "./components/HandStatusContainer";
 import PayTableContainer from "./components/PayTableContainer";
 import CreditContainer from "./components/CreditContainer";
 import ImagePreload from "./components/ImagePreload";
-import viewportUnitsBuggyfill from "viewport-units-buggyfill";
+
 import logo from "./logo.svg";
 class App extends Component {
     render() {
@@ -33,7 +33,5 @@ class App extends Component {
         );
     }
 }
-document.addEventListener("DOMContentLoaded", function(event) {
-    viewportUnitsBuggyfill.init();
-});
+
 export default App;
