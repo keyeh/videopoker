@@ -39,6 +39,8 @@ Open browser to http://localhost:3000/
 
 ## Release History
 
+-   0.3.0
+    -   Add responsive styling
 -   0.2.0
     -   Add highlight and blink effect to a winning hand in the paytable
 -   0.1.0
