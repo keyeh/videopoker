@@ -37,10 +37,6 @@ span {
     font-size: 1.25rem;
     -webkit-text-stroke: 0;
 }
-.payTable span.highlight {
-    color: white;
-    animation: blink 1s steps(1) infinite;
-}
 
 .payTable tr td:nth-child(1) {
     text-align: left;
@@ -62,7 +58,6 @@ span {
     text-align: center;
     line-height: 5rem;
     padding-top: 10px;
-    /* justify-content: center; */
 }
 
 .cardHold span {
@@ -117,6 +112,7 @@ img.card {
 }
 .buttonRow .logo {
     height: 10px;
+    visibility: hidden;
 }
 button {
     font-family: "Press Start 2P", cursive;
@@ -138,6 +134,10 @@ button:active {
 }
 
 /* Blink Animation */
+.blink {
+    color: white;
+    animation: blink 1s steps(1) infinite;
+}
 @keyframes blink {
     0% {
         opacity: 1;
@@ -147,6 +147,21 @@ button:active {
     }
     100% {
         opacity: 1;
+    }
+}
+/* Flash Animation */
+.flash {
+    animation: flash 1s steps(1) infinite;
+}
+@keyframes flash {
+    0% {
+        color: white;
+    }
+    50% {
+        color: black;
+    }
+    100% {
+        color: white;
     }
 }
 

@@ -39,12 +39,14 @@ Open browser to http://localhost:3000/
 
 ## Release History
 
+-   0.3.2
+    -   Flashing Deal button
 -   0.3.1
     -   Improve sound playback performance
 -   0.3.0
     -   Add responsive styling
 -   0.2.0
-    -   Add highlight and blink effect to a winning hand in the paytable
+    -   Add blink effect to a winning hand in the paytable
 -   0.1.0
     -   The first proper release
 -   0.0.1

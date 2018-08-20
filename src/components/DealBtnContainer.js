@@ -16,7 +16,11 @@ class DealBtnContainer extends Component {
     }
 
     render() {
-        return <button onClick={this.handleButton.bind(this)}>DEAL</button>;
+        return (
+            <button onClick={this.handleButton.bind(this)} className={this.props.roundEnded ? "flash" : ""}>
+                DEAL
+            </button>
+        );
     }
 }
 

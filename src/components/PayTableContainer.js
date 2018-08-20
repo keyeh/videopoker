@@ -28,7 +28,7 @@ class PayTableContainer extends Component {
                                                 index === 5 ? "active" : "" /* todo when we implement changing bets*/
                                             }
                                         >
-                                            <span className={isWinningRow ? "highlight" : ""}>
+                                            <span className={isWinningRow ? "blink" : ""}>
                                                 {typeof c === "object" ? c.display : c}
                                             </span>
                                         </td>
