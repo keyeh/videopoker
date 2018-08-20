@@ -133,9 +133,11 @@ button:active {
     color: white;
 }
 
+.white {
+    color: white;
+}
 /* Blink Animation */
 .blink {
-    color: white;
     animation: blink 1s steps(1) infinite;
 }
 @keyframes blink {

@@ -18,7 +18,14 @@ class PayTableContainer extends Component {
                 <table className="payTable">
                     <tbody>
                         {PayTableData.map((row) => {
-                            const isWinningRow = this.props.handWinName === row[0].pokersolver;
+                            let classes = "";
+                            if (this.props.handWinName === row[0].pokersolver) {
+                                if (this.props.roundEnded) {
+                                    classes = "blink white";
+                                } else {
+                                    classes = "white";
+                                }
+                            }
                             return (
                                 <tr key={this.getKey()}>
                                     {row.map((c, index) => (
@@ -28,9 +35,7 @@ class PayTableContainer extends Component {
                                                 index === 5 ? "active" : "" /* todo when we implement changing bets*/
                                             }
                                         >
-                                            <span className={isWinningRow ? "blink" : ""}>
-                                                {typeof c === "object" ? c.display : c}
-                                            </span>
+                                            <span className={classes}>{typeof c === "object" ? c.display : c}</span>
                                         </td>
                                     ))}
                                 </tr>
