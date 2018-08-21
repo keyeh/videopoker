@@ -5756,6 +5756,10 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+react-fastclick@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-fastclick/-/react-fastclick-3.0.2.tgz#2994c60088cda90b0b2cbfac4b6e7c6bc73d6a3a"
+
 react-on-images-loaded@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/react-on-images-loaded/-/react-on-images-loaded-2.1.9.tgz#1e92c066f0eb8427abaac75feffee2e1289b09b3"

@@ -43,8 +43,22 @@
   <!-- <script src="/path/to/soundmanager2.js"></script> -->
   <!-- <script src="//code.jquery.com/jquery-1.8.0.min.js"></script> -->
   <title>Video Poker</title>
-  <script src="sounds/lowLag.js" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-jsmin.js"></script>
+  <script async src="sounds/lowLag.js" />
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2-jsmin.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      user-select: none;
+      /* Non-prefixed version, currently supported by Chrome and Opera */
+      touch-action: manipulation;
+      /* Disable scrolling on iOS */
+      position: fixed;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>

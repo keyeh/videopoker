@@ -9,6 +9,7 @@
         "react": "^16.4.2",
         "react-countup": "^4.0.0-alpha.6",
         "react-dom": "^16.4.2",
+        "react-fastclick": "^3.0.2",
         "react-on-images-loaded": "^2.1.9",
         "react-redux": "^5.0.7",
         "react-scripts": "1.1.4",
