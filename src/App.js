@@ -13,23 +13,25 @@ import logo from "./logo.svg";
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <main className="App">
                 <ImagePreload />
                 <PayTableContainer />
-                <HandStatusContainer />
-                <CardContainer />
-                <div className="bottomRow padded">
+                <section className="hand">
+                    <HandStatusContainer />
+                    <CardContainer />
+                </section>
+                <section className="bottomRow padded">
                     <span className="bet">BET 5</span>
                     <WinContainer />
                     <CreditContainer />
-                </div>
-                <div className="buttonRow">
+                </section>
+                <section className="buttonRow">
                     <button>HELP</button>
                     <SoundBtnContainer />
                     <img className="logo" src={logo} alt="logo" />
                     <DealBtnContainer />
-                </div>
-            </div>
+                </section>
+            </main>
         );
     }
 }

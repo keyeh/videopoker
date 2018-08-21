@@ -14,7 +14,7 @@ class PayTableContainer extends Component {
 
     render() {
         return (
-            <div className="payTableContainer padded">
+            <article className="payTableContainer padded">
                 <table className="payTable">
                     <tbody>
                         {PayTableData.map((row) => {
@@ -43,7 +43,7 @@ class PayTableContainer extends Component {
                         })}
                     </tbody>
                 </table>
-            </div>
+            </article>
         );
     }
 }

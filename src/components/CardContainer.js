@@ -15,7 +15,7 @@ class CardContainer extends Component {
             <div className="cardContainer padded">
                 {Object.keys(cards).map((key) => {
                     return (
-                        <div key={key}>
+                        <figure key={key}>
                             <CardHold hold={this.props.hold[key]} />
                             <Card
                                 id={key}
@@ -23,7 +23,7 @@ class CardContainer extends Component {
                                 onClick={this.handleCardClick.bind(this)}
                                 revealed={this.props.cardRevealed[key]}
                             />
-                        </div>
+                        </figure>
                     );
                 })}
             </div>

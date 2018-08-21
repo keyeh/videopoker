@@ -5,15 +5,15 @@ class HandStatusContainer extends Component {
     render() {
         if (this.props.status) {
             return (
-                <div className="handStatusContainer padded">
+                <header className="handStatusContainer padded">
                     <span>{this.props.status.toUpperCase()}</span>
-                </div>
+                </header>
             );
         } else {
             return (
-                <div className="handStatusContainer padded">
+                <header className="handStatusContainer padded">
                     <span>&nbsp;</span>
-                </div>
+                </header>
             );
         }
     }
