@@ -1,0 +1,23 @@
+@mixin tabletWidth {
+    /* iPad or smaller */
+    @media all and (max-width: 980px) {
+        @content;
+    }
+}
+@mixin phoneHorizontalWidth {
+    /* Horizontal phone and smaller */
+    @media all and (max-width: 736px) {
+        @content;
+    }
+}
+@mixin phoneHorizontalOnly {
+    /* Specific to horizontal phones up to PixelXL/7+ size */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (max-device-height: 414px) and (orientation: landscape) {
+        @content;
+    }
+}
+@mixin PhoneVerticalWidth {
+    @media all and (max-width: 480px) {
+        @content;
+    }
+}

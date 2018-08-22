@@ -1,0 +1,224 @@
+@import "mixins.scss";
+@import "animations.scss";
+@import "variables.scss";
+:root {
+    font-size: 14px;
+    @include phoneHorizontalWidth {
+        font-size: 8px;
+    }
+}
+.App {
+    font-family: "Press Start 2P", cursive;
+    display: grid;
+    grid-template: "paytable" "hand" "bottomrow" "buttons";
+    height: 100vh;
+    width: 100vw;
+    max-width: 125vh;
+    @include phoneHorizontalOnly {
+        max-width: 100vw;
+        grid-template:
+            "paytable buttons"
+            "hand buttons"
+            "bottomrow buttons";
+    }
+    background-color: $bg-color;
+    color: $main-text-color;
+    align-content: space-between;
+}
+span {
+    font-size: 2rem;
+    -webkit-text-stroke: 2px $text-stroke-color;
+    width: 100%;
+}
+
+.padded {
+    padding-left: 15px;
+    padding-right: 15px;
+    @include PhoneVerticalWidth {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.payTableContainer {
+    grid-area: paytable;
+    padding-top: 15px;
+    @include PhoneVerticalWidth {
+        padding-top: 10px;
+    }
+
+    .payTable {
+        width: 100%;
+        height: 100%;
+        border: 3px solid $paytable-color;
+        color: $paytable-color;
+        background-color: $paytable-bg-color;
+        text-align: right;
+        border-collapse: collapse;
+        span {
+            font-size: 1.25rem;
+            -webkit-text-stroke: 0;
+            @include PhoneVerticalWidth {
+                font-size: 1.15rem;
+            }
+        }
+
+        tr td:nth-child(1) {
+            text-align: left;
+        }
+        td {
+            border-left: 3px solid $paytable-color;
+            padding-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            @include phoneHorizontalOnly {
+                padding-top: 3px;
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+            &:last-child td {
+                padding-bottom: 5px;
+                @include phoneHorizontalOnly {
+                    padding-bottom: 3px;
+                }
+            }
+            &:first-child {
+                border-left: none;
+            }
+            &.active {
+                background-color: $paytable-active-color;
+            }
+        }
+    }
+}
+.hand {
+    grid-area: hand;
+    .handStatusContainer {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        line-height: 5rem;
+        height: 10rem;
+        @include phoneHorizontalWidth {
+            span {
+                font-size: 2.8rem;
+            }
+        }
+        @include phoneHorizontalOnly {
+            height: 5rem; // text should fit on 1 line
+        }
+    }
+
+    .cardContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+
+        @include tabletWidth {
+            grid-column-gap: 20px;
+        }
+        @include PhoneVerticalWidth {
+            grid-column-gap: 10px;
+        }
+        figure {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            .cardHold {
+                font-size: 1rem;
+                -webkit-text-stroke: 0;
+                color: $text-highlight-color;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+            img.card {
+                max-width: 99.9%;
+                cursor: pointer;
+                @media screen and (orientation: landscape) {
+                    max-height: 25vh;
+                }
+            }
+        }
+    }
+}
+
+.bottomRow {
+    grid-area: bottomrow;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include phoneHorizontalWidth {
+        span {
+            -webkit-text-stroke: 1px $text-stroke-color;
+        }
+    }
+    .bet {
+        text-align: left;
+    }
+    .winContainer {
+        text-align: center;
+    }
+    .creditContainer {
+        text-align: right;
+    }
+    @include PhoneVerticalWidth {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: min-content;
+        grid-row-gap: 10px;
+        align-content: center;
+        .winContainer {
+            text-align: right;
+        }
+        .creditContainer {
+            text-align: left;
+        }
+    }
+}
+
+.buttonRow {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-column-gap: 10px;
+    height: 75px;
+    @include phoneHorizontalOnly {
+        grid-template-columns: unset;
+        grid-row-gap: 10px;
+        height: unset;
+    }
+    /* Compensate for shadow */
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 3px;
+    .logo {
+        height: 10px;
+        visibility: hidden;
+    }
+    button {
+        font-family: "Press Start 2P", cursive;
+        cursor: pointer;
+        text-align: center;
+        color: black;
+        font-size: 1.25rem;
+        @include PhoneVerticalWidth {
+            font-size: 1.5rem;
+        }
+        background: #e0c725;
+        border-radius: 2px;
+        border-color: rgb(221, 221, 221);
+        border-width: 2px;
+        border-style: outset;
+        box-shadow: 0 0 0 1px #9e9f27, 0 0 0 3px black;
+        height: 100%;
+    }
+    button:active {
+        border-style: inset;
+        color: $text-highlight-color;
+    }
+}
+
+.white {
+    color: white;
+}

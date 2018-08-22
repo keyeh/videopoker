@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./styles/App.css";
 import CardContainer from "./components/CardContainer";
 import DealBtnContainer from "./components/DealBtnContainer";
 import SoundBtnContainer from "./components/SoundBtnContainer";
