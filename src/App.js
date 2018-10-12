@@ -26,7 +26,7 @@ class App extends Component {
                     <CreditContainer />
                 </section>
                 <section className="buttonRow">
-                    <button>HELP</button>
+                    <button onClick={() => window.location.href='https://github.com/keyeh/videopoker#how-to-play'}>HELP</button>
                     <SoundBtnContainer />
                     <img className="logo" src={logo} alt="logo" />
                     <DealBtnContainer />

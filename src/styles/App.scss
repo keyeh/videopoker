@@ -132,9 +132,9 @@ span {
                 text-align: center;
             }
             img.card {
-                max-width: 99.9%;
+                max-width: 99%;
                 cursor: pointer;
-                @media screen and (orientation: landscape) {
+                @include phoneHorizontalOnly {
                     max-height: 25vh;
                 }
             }
