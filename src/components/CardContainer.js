@@ -34,9 +34,9 @@ class CardContainer extends Component {
 const mapDispatchToProps = { holdCard };
 
 const mapStateToProps = (state) => ({
-    hand: state.data.hand,
-    hold: state.data.hold,
-    roundEnded: state.data.roundEnded,
+    hand: state.game.hand,
+    hold: state.game.hold,
+    roundEnded: state.game.roundEnded,
     cardRevealed: state.ui.cardRevealed
 });
 export default connect(

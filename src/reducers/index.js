@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import dataReducer from "./dataReducer";
+import gameReducer from "./gameReducer";
 import uiReducer from "./uiReducer";
 import creditReducer from "./creditReducer";
 
 export default combineReducers({
-    data: dataReducer,
+    game: gameReducer,
     ui: uiReducer,
     credit: creditReducer
 });

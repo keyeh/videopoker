@@ -20,7 +20,7 @@ class HandStatusContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    roundEnded: state.data.roundEnded,
-    status: state.data.handWin.name
+    roundEnded: state.game.roundEnded,
+    status: state.game.handWin.name
 });
 export default connect(mapStateToProps)(HandStatusContainer);

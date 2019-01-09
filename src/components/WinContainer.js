@@ -11,7 +11,7 @@ class WinContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    roundEnded: state.data.roundEnded,
-    win: state.data.handWin.win
+    roundEnded: state.game.roundEnded,
+    win: state.game.handWin.win
 });
 export default connect(mapStateToProps)(WinContainer);

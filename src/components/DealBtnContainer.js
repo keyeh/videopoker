@@ -27,7 +27,7 @@ class DealBtnContainer extends Component {
 const mapDispatchToProps = { newHand, dealNextCards, revealCards, subtractCredits, addCredits };
 
 const mapStateToProps = (state) => ({
-    roundEnded: state.data.roundEnded
+    roundEnded: state.game.roundEnded
 });
 export default connect(
     mapStateToProps,

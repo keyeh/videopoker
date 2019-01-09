@@ -51,8 +51,8 @@ class PayTableContainer extends Component {
 const mapDispatchToProps = {};
 
 const mapStateToProps = (state) => ({
-    roundEnded: state.data.roundEnded,
-    handWinName: state.data.handWin.name
+    roundEnded: state.game.roundEnded,
+    handWinName: state.game.handWin.name
 });
 export default connect(
     mapStateToProps,
