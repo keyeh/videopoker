@@ -3,19 +3,12 @@ import { connect } from "react-redux";
 
 class HandStatusContainer extends Component {
     render() {
-        if (this.props.status) {
-            return (
-                <header className="handStatusContainer padded">
-                    <span>{this.props.status.toUpperCase()}</span>
-                </header>
-            );
-        } else {
-            return (
-                <header className="handStatusContainer padded">
-                    <span>&nbsp;</span>
-                </header>
-            );
-        }
+        const {status} = this.props;
+        return (
+            <header className="handStatusContainer padded">
+                <span>{status ? status.toUpperCase() : ' '}</span>
+            </header>
+        );
     }
 }
 
