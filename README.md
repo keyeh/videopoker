@@ -9,7 +9,7 @@
 
 ## How to play
 
-Visit [https://keyeh.io/videopoker](https://keyeh.io/videopoker) to play.
+Visit [http://keyeh.github.io/videopoker/](http://keyeh.github.io/videopoker/) to play.
 
 Press the Deal button and select the cards you want to hold. Then press deal again to see if you won.
 
